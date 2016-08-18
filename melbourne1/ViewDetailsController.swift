@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewDetailsController.swift
 //  melbourne1
 //
 //  Created by zihaowang on 17/08/2016.
@@ -9,27 +9,22 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+
+class ViewDetailsController: UIViewController {
 
   
+    var currentArtwork : Artworks?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
-    let imageUrlload:String? = "https://rexwh.files.wordpress.com/2013/11/colesfountain_20131117_1342_46.jpg"
     override func viewDidLoad() {
         super.viewDidLoad()
-         let ref = Firebase(url: "https://melbournefootprint.firebaseio.com/artworks")
-        ref.childByAppendingPath("name").observeSingleEventOfType(.Value, withBlock: { snapshot in
-            print( snapshot.value )
-            self.nameLabel.text = String(snapshot.value)
-            })
-        ref.childByAppendingPath("description").observeSingleEventOfType(.Value, withBlock: { snapshot in
-            print( snapshot.value )
-            self.textView.text = String(snapshot.value)
-        })
+       self.nameLabel.text = currentArtwork?.Name
+        
+            self.textView.text = currentArtwork?.Descriptions
                 imageView.image = nil
-        if let imageUrl = imageUrlload {
+        if let imageUrl = currentArtwork?.Photo {
             NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: imageUrl)!,completionHandler: {(data,response,error) -> Void in
                 if error != nil {
                 print(error)
