@@ -11,24 +11,31 @@ import MapKit
 import Firebase
 import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController ,CLLocationManagerDelegate{
 
     var awork : ArtworkForMap?
     var reallart : Artworks?
     
     @IBOutlet weak var mapView: MKMapView!
     let regionRadius: CLLocationDistance = 1000
+    let locationManager1 = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManager1.delegate = self
+        self.locationManager1.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager1.requestWhenInUseAuthorization()
+        self.locationManager1.startUpdatingLocation()
+        self.mapView.showsUserLocation = true
         
         fetchArtworks()
         mapView.showsUserLocation = true
     
 
         // set initial location in Honolulu
-        let initialLocation = CLLocation(latitude: -37.8189542313548, longitude: 144.972959186539)
-        centerMapOnLocation(initialLocation)
+       //let initialLocation = CLLocation(latitude: -37.8189542313548, longitude: 144.972959186539)
+        //centerMapOnLocation(initialLocation)
         
         loadInitialData()
         mapView.addAnnotations(artworks)
@@ -104,14 +111,26 @@ class MapViewController: UIViewController {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let location = locations.last as! CLLocation
-        
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last
+        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude,
+                                            longitude: location!.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01,
+            longitudeDelta: 0.01))
         self.mapView.setRegion(region, animated: true)
+        self.locationManager1.stopUpdatingLocation()
+        
     }
+    
+//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+//        let location = locations.last as! CLLocation
+//        
+//        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+//        
+//        self.mapView.setRegion(region, animated: true)
+//    }
 
     
 //    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
