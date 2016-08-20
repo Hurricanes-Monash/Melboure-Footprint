@@ -21,8 +21,10 @@ class ViewDetailsController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         typeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         typeLabel.numberOfLines = 0;
        self.nameLabel.text = currentArtwork?.Name

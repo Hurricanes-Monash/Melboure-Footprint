@@ -15,7 +15,7 @@ class TableViewController: UITableViewController {
     var artworks = [Artworks]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -136,6 +136,8 @@ class TableViewController: UITableViewController {
             let controller: ViewDetailsController = segue.destinationViewController
             as! ViewDetailsController
             controller.currentArtwork = self.artworks[indexPath.row]
+            //self.tabBarController?.tabBar.hidden = true
+            controller.hidesBottomBarWhenPushed = true
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

@@ -10,9 +10,6 @@ import MapKit
 
 extension MapViewController: MKMapViewDelegate {
     
-    // 1
-    
-   // var segue1varUIStoryboardSegue
     
     
     func mapView(mapView: MKMapView,
@@ -28,11 +25,14 @@ extension MapViewController: MKMapViewDelegate {
                 // 3
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
+                //print("zai zhe")
+                view.image = UIImage(named:"custom_pin.png")
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
             }
             
             view.pinColor = annotation.pinColor()
+
             
             return view
         }
@@ -45,10 +45,6 @@ extension MapViewController: MKMapViewDelegate {
             self.awork = view.annotation as! ArtworkForMap
             performSegueWithIdentifier("tothemoon", sender: self)
 
-//            let controller: ViewDetailsController = segue1.destinationViewController
-//                as! ViewDetailsController
-            
-           //controller.currentArtwork = location
         }
         
         
@@ -68,6 +64,7 @@ extension MapViewController: MKMapViewDelegate {
             }
             
              controller.currentArtwork = self.reallart
+            controller.hidesBottomBarWhenPushed = true
         }
     }
     

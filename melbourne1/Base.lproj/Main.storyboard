@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848" y="-165"/>
+            <point key="canvasLocation" x="2660" y="-165"/>
         </scene>
         <!--Artworks-->
         <scene sceneID="G6l-U9-fTe">
@@ -216,9 +216,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsT-eb-xze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1277" y="297"/>
+            <point key="canvasLocation" x="2901" y="297"/>
         </scene>
-        <!--Item 2-->
+        <!--Map-->
         <scene sceneID="Msh-B2-YrC">
             <objects>
                 <viewController id="lDT-c0-csS" customClass="MapViewController" customModule="melbourne1" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,7 +242,7 @@
                             <constraint firstItem="BDb-s1-aSJ" firstAttribute="centerY" secondItem="KXL-Yt-9FX" secondAttribute="centerY" id="mmt-cg-zmy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="nW9-RA-hPj"/>
+                    <navigationItem key="navigationItem" title="Map" id="duc-ne-oM0"/>
                     <connections>
                         <outlet property="mapView" destination="BDb-s1-aSJ" id="x4S-P6-93o"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="tothemoon" id="wJb-EB-e63"/>
@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u94-iq-Zl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="-537"/>
+            <point key="canvasLocation" x="1254" y="-537"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="M8b-gy-2fS">
@@ -263,18 +263,54 @@
                     </tabBar>
                     <connections>
                         <segue destination="RXa-1i-j07" kind="relationship" relationship="viewControllers" id="y8g-CT-bGa"/>
-                        <segue destination="lDT-c0-csS" kind="relationship" relationship="viewControllers" id="CqP-bW-Trd"/>
+                        <segue destination="CyJ-cd-uCa" kind="relationship" relationship="viewControllers" id="CqP-bW-Trd"/>
+                        <segue destination="mBd-hf-AVq" kind="relationship" relationship="viewControllers" id="5Qj-CF-itn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7I-wB-Rvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-442" y="-175"/>
         </scene>
-        <!--Item-->
+        <!--About-->
+        <scene sceneID="RpU-xd-ZJy">
+            <objects>
+                <viewController id="YJK-x1-u97" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uj4-iU-J5I"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zb0-vf-M80"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NEy-JA-3Uw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-IL-nlD">
+                                <rect key="frame" x="20" y="64" width="560" height="238"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Melbourne Footprint is your artistic and history guide in  Melbourne. You can find interesting sculptures, artworks  and architectures by using this application. You can tap  one of the amazing works on the list or on the map to see its detail. You would know its detailed description including  artist, structure and built-up time, etc.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ixG-Ol-iFv">
+                                <rect key="frame" x="20" y="343" width="560" height="84"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Proudly Sponsored by Monash University                                                               Developed by Team Hurricanes</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="DgM-DE-AOC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKI-Fr-UKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392" y="552"/>
+        </scene>
+        <!--Artworks-->
         <scene sceneID="Hpd-bS-IM3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RXa-1i-j07" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="KOm-uh-f80"/>
+                    <tabBarItem key="tabBarItem" title="Artworks" image="list tab" id="KOm-uh-f80"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DOf-wj-ijZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -287,9 +323,52 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4U4-xT-mKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="603" y="302"/>
+            <point key="canvasLocation" x="2275" y="202"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="0eE-7S-oBk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CyJ-cd-uCa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="map tab" id="nW9-RA-hPj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jai-ac-anC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lDT-c0-csS" kind="relationship" relationship="rootViewController" id="bW5-r3-E2P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IvL-0s-Tv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="442" y="-537"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="vYK-aa-QB1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mBd-hf-AVq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="about tab" id="kEi-BE-sfx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ka-s6-bxv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YJK-x1-u97" kind="relationship" relationship="rootViewController" id="Sgy-Hp-rU2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZuP-QA-edy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="552"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="about tab" width="25" height="25"/>
+        <image name="list tab" width="30" height="30"/>
+        <image name="map tab" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wJb-EB-e63"/>
     </inferredMetricsTieBreakers>

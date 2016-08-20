@@ -21,6 +21,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchArtworks()
         mapView.showsUserLocation = true
     
