@@ -16,14 +16,14 @@ extension MapViewController: MKMapViewDelegate {
                  viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView! {
         if let annotation = annotation as? ArtworkForMap {
             let identifier = "pin"
-            var view: MKPinAnnotationView
+            var view: MKAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
                 as? MKPinAnnotationView { // 2
                 dequeuedView.annotation = annotation
                 view = dequeuedView
             } else {
                 // 3
-                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 //print("zai zhe")
                 view.image = UIImage(named:"custom_pin.png")
@@ -31,7 +31,7 @@ extension MapViewController: MKMapViewDelegate {
                 view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
             }
             
-            view.pinColor = annotation.pinColor()
+           // view.pinColor = annotation.pinColor()
 
             
             return view
