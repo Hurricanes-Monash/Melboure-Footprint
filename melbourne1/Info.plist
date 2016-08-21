@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Let us check</string>
+	<string>In order to use this app</string>
 	<key>CFBundleDisplayName</key>
 	<string></string>
 	<key>NSAppTransportSecurity</key>
