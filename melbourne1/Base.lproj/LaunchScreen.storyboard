@@ -17,11 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="6nF-xV-LNN">
-                                <rect key="frame" x="180" y="221" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen" translatesAutoresizingMaskIntoConstraints="NO" id="6nF-xV-LNN">
+                                <rect key="frame" x="59" y="28" width="482" height="552"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="482" id="TKt-iH-TpK"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6nF-xV-LNN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5zd-2P-Xh6"/>
+                            <constraint firstItem="6nF-xV-LNN" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="nGy-Vx-5Kb"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="6nF-xV-LNN" secondAttribute="bottom" constant="20" id="uDq-4z-nWP"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -30,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LOGO" width="600" height="447"/>
+        <image name="screen" width="2208" height="2208"/>
     </resources>
 </document>

@@ -45,12 +45,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KO-H3-IdS">
-                                <rect key="frame" x="58" y="225" width="513" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDw-8Q-16D">
                                 <rect key="frame" x="0.0" y="254" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -87,6 +81,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TypeLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fo-9W-dTb">
                                 <rect key="frame" x="58" y="312" width="515" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KO-H3-IdS">
+                                <rect key="frame" x="58" y="225" width="513" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -158,12 +158,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s48-1O-1yP">
-                                            <rect key="frame" x="8" y="2" width="171" height="81"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="171" id="Q3f-fP-naJ"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="nameL" text="nameL" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3H8-YG-N5N">
                                             <rect key="frame" x="187" y="0.0" width="405" height="33"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -176,6 +170,12 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s48-1O-1yP">
+                                            <rect key="frame" x="8" y="2" width="171" height="81"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="171" id="Q3f-fP-naJ"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="3H8-YG-N5N" secondAttribute="bottom" constant="50" id="8yi-s3-W3v"/>
@@ -216,7 +216,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsT-eb-xze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2901" y="297"/>
+            <point key="canvasLocation" x="3154" y="391"/>
         </scene>
         <!--Map-->
         <scene sceneID="Msh-B2-YrC">
@@ -283,22 +283,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-IL-nlD">
-                                <rect key="frame" x="20" y="64" width="560" height="238"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Melbourne Footprint is your artistic and history guide in  Melbourne. You can find interesting sculptures, artworks  and architectures by using this application. You can tap  one of the amazing works on the list or on the map to see its detail. You would know its detailed description including  artist, structure and built-up time, etc.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ixG-Ol-iFv">
-                                <rect key="frame" x="20" y="343" width="560" height="84"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ixG-Ol-iFv">
+                                <rect key="frame" x="20" y="424" width="560" height="119"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Proudly Sponsored by Monash University                                                               Developed by Team Hurricanes</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" misplaced="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-IL-nlD">
+                                <rect key="frame" x="20" y="64" width="560" height="357"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="376" id="RNg-L5-6QE"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Melbourne Footprint is your artistic and history guide in Melbourne. You can find interesting sculptures, artworks and architectures by using this application. You can tap one of the amazing works on the list or on the map to see its detail. You would know its detailed description including  artist, structure and built-up time, etc.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1vU-IL-nlD" firstAttribute="leading" secondItem="NEy-JA-3Uw" secondAttribute="leadingMargin" id="0Ra-sy-POj"/>
+                            <constraint firstItem="1vU-IL-nlD" firstAttribute="leading" secondItem="ixG-Ol-iFv" secondAttribute="leading" id="1o3-s7-l3q"/>
+                            <constraint firstItem="1vU-IL-nlD" firstAttribute="top" secondItem="uj4-iU-J5I" secondAttribute="bottom" id="3PF-dl-36N"/>
+                            <constraint firstItem="Zb0-vf-M80" firstAttribute="top" secondItem="ixG-Ol-iFv" secondAttribute="bottom" constant="34" id="3aY-Br-WAY"/>
+                            <constraint firstItem="ixG-Ol-iFv" firstAttribute="top" secondItem="1vU-IL-nlD" secondAttribute="bottom" constant="-2" id="8Ue-hz-ufP"/>
+                            <constraint firstItem="1vU-IL-nlD" firstAttribute="trailing" secondItem="NEy-JA-3Uw" secondAttribute="trailingMargin" id="Ah4-xU-mOS"/>
+                            <constraint firstItem="ixG-Ol-iFv" firstAttribute="top" secondItem="1vU-IL-nlD" secondAttribute="bottom" constant="-2" id="BQk-B2-6Ad"/>
+                            <constraint firstItem="ixG-Ol-iFv" firstAttribute="leading" secondItem="NEy-JA-3Uw" secondAttribute="leadingMargin" id="GbX-q9-5Uy"/>
+                            <constraint firstItem="1vU-IL-nlD" firstAttribute="top" secondItem="uj4-iU-J5I" secondAttribute="bottom" id="Ihc-bQ-P3o"/>
+                            <constraint firstItem="1vU-IL-nlD" firstAttribute="leading" secondItem="NEy-JA-3Uw" secondAttribute="leadingMargin" id="Q8O-7H-pVg"/>
+                            <constraint firstItem="1vU-IL-nlD" firstAttribute="trailing" secondItem="ixG-Ol-iFv" secondAttribute="trailing" id="TUq-XT-UGz"/>
+                            <constraint firstItem="ixG-Ol-iFv" firstAttribute="top" secondItem="1vU-IL-nlD" secondAttribute="bottom" constant="-2" id="cJe-6U-BYT"/>
+                            <constraint firstItem="1vU-IL-nlD" firstAttribute="trailing" secondItem="NEy-JA-3Uw" secondAttribute="trailingMargin" id="eIV-GS-0zh"/>
+                            <constraint firstItem="ixG-Ol-iFv" firstAttribute="trailing" secondItem="NEy-JA-3Uw" secondAttribute="trailingMargin" id="sdM-gs-BBA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="DgM-DE-AOC"/>
                 </viewController>
@@ -323,7 +349,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4U4-xT-mKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2275" y="202"/>
+            <point key="canvasLocation" x="1999" y="542"/>
         </scene>
         <!--Map-->
         <scene sceneID="0eE-7S-oBk">
@@ -370,6 +396,6 @@
         <image name="map tab" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wJb-EB-e63"/>
+        <segue reference="1T9-oe-y9y"/>
     </inferredMetricsTieBreakers>
 </document>
