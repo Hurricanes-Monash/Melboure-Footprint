@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wMM-Tm-pgP">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Details-->
+        <!--Artwork Details-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewDetailsController" customModule="melbourne1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewDetailsController" customModule="Melb_Footprint" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -127,7 +128,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="View Details" id="2KH-j4-lH6"/>
+                    <navigationItem key="navigationItem" title="Artwork Details" id="2KH-j4-lH6"/>
                     <connections>
                         <outlet property="artistLabel" destination="uWo-hT-17m" id="kra-6S-LsY"/>
                         <outlet property="dateLabel" destination="qzz-1f-1bW" id="UU5-HA-XPr"/>
@@ -144,17 +145,17 @@
         <!--Artworks-->
         <scene sceneID="G6l-U9-fTe">
             <objects>
-                <tableViewController id="Cqo-1r-HCd" customClass="TableViewController" customModule="melbourne1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Cqo-1r-HCd" customClass="TableViewController" customModule="Melb_Footprint" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="BBH-9U-uS5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="92" id="gN0-32-Xb2" customClass="TableViewCell" customModule="melbourne1" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="92" id="gN0-32-Xb2" customClass="TableViewCell" customModule="Melb_Footprint" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gN0-32-Xb2" id="PVn-MR-TP3">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="91"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="nameL" text="nameL" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3H8-YG-N5N">
@@ -220,7 +221,7 @@
         <!--Map-->
         <scene sceneID="Msh-B2-YrC">
             <objects>
-                <viewController id="lDT-c0-csS" customClass="MapViewController" customModule="melbourne1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lDT-c0-csS" customClass="MapViewController" customModule="Melb_Footprint" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z2i-7r-QvF"/>
                         <viewControllerLayoutGuide type="bottom" id="aKc-78-SBX"/>
