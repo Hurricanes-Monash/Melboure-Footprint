@@ -20,11 +20,12 @@ class ViewDetailsController: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var textView: UITextView!
+
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self,action: #selector(imageTapped))
         imageView.userInteractionEnabled = true
@@ -39,11 +40,12 @@ class ViewDetailsController: UIViewController {
         self.typeLabel.text = currentArtwork?.Structure
         
             self.textL.text = currentArtwork?.Descriptions
+        self.textL.sizeToFit()
                 imageView.image = nil
         if let photo = currentArtwork!.Photo{
             self.imageView.loadImageUsingCacheWithUrlString(photo)}
-            
-        
+
+      
         
 //        if let imageUrl = currentArtwork?.Photo {
 //            NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: imageUrl)!,completionHandler: {(data,response,error) -> Void in
@@ -64,7 +66,18 @@ class ViewDetailsController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    func heightForLabel(text:String, font:UIFont, width:CGFloat) -> CGFloat
+    {
+        let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.font = font
+        label.text = text
+        
+        label.sizeToFit()
+        return label.frame.height
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
