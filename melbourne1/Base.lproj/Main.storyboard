@@ -154,7 +154,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="nameL" text="nameL" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3H8-YG-N5N">
-                                            <rect key="frame" x="187" y="0.0" width="405" height="33"/>
+                                            <rect key="frame" x="187" y="0.0" width="405" height="40"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -173,7 +173,7 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="3H8-YG-N5N" secondAttribute="bottom" constant="50" id="8yi-s3-W3v"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="3H8-YG-N5N" secondAttribute="bottom" constant="43.5" id="8yi-s3-W3v"/>
                                         <constraint firstItem="3H8-YG-N5N" firstAttribute="top" secondItem="PVn-MR-TP3" secondAttribute="topMargin" constant="-9" id="ALM-0e-HCp"/>
                                         <constraint firstItem="s48-1O-1yP" firstAttribute="top" secondItem="3H8-YG-N5N" secondAttribute="top" constant="2" id="Een-3c-fP3"/>
                                         <constraint firstItem="pqn-Qa-skQ" firstAttribute="top" secondItem="PVn-MR-TP3" secondAttribute="topMargin" constant="40" id="F2b-oU-UL9"/>
