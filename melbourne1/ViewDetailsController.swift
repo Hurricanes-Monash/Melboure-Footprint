@@ -10,9 +10,11 @@ import UIKit
 import Firebase
 
 
-class ViewDetailsController: UIViewController {
+class ViewDetailsController: UIViewController,UIScrollViewDelegate {
 
-  
+    var scrollV : UIScrollView!
+    var newImageView : UIImageView!
+    
     var currentArtwork : Artworks?
     
     @IBOutlet weak var textL: UILabel!
@@ -66,39 +68,42 @@ class ViewDetailsController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-    func heightForLabel(text:String, font:UIFont, width:CGFloat) -> CGFloat
-    {
-        let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
-        label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        label.font = font
-        label.text = text
-        
-        label.sizeToFit()
-        return label.frame.height
-        
-    }
-    override func didReceiveMemoryWarning() {
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
        func imageTapped(sender: UITapGestureRecognizer) {
         if sender.state  == .Ended{
+            
         let imageView = sender.view as! UIImageView
-        let newImageView = UIImageView(image: imageView.image)
-        newImageView.frame = self.view.frame
-        newImageView.backgroundColor = .blackColor()
-        newImageView.contentMode = .ScaleAspectFit
+          newImageView = UIImageView(image: imageView.image)
+          scrollV = UIScrollView()
+           scrollV.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+            scrollV.minimumZoomScale=1
+            scrollV.maximumZoomScale=3
+            scrollV.bounces=false
+            scrollV.delegate=self;
+        newImageView.frame = CGRectMake(0, 0,scrollV.frame.width ,scrollV.frame.height)
+       newImageView.backgroundColor = .blackColor()
+       newImageView.contentMode = .ScaleAspectFit
         newImageView.userInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewDetailsController.dismissFullscreenImage(_:)))
+        let tap = UITapGestureRecognizer(target:self, action: #selector(ViewDetailsController.dismissFullscreenImage(_:)))
         newImageView.addGestureRecognizer(tap)
-        self.view.addSubview(newImageView)
+        scrollV.addSubview(newImageView)
+        self.view.addSubview(scrollV)
         }
+    
+    }
+    
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?
+    {
+        return self.newImageView
     }
     
     func dismissFullscreenImage(sender: UITapGestureRecognizer) {
-        sender.view?.removeFromSuperview()
+        sender.view!.removeFromSuperview()
+        scrollV.removeFromSuperview()
     }
 
     
