@@ -33,9 +33,16 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate{
         mapView.showsUserLocation = true
     
 
-        // set initial location in Honolulu
-       //let initialLocation = CLLocation(latitude: -37.8189542313548, longitude: 144.972959186539)
-        //centerMapOnLocation(initialLocation)
+//        
+//        let locValue:CLLocationCoordinate2D = locationManager1.location!.coordinate
+//       
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+//        
+//      let initialLocation = CLLocation(latitude: -37.8885677, longitude: 145.045028)
+//        let currentlocation = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+//        //let i111 = self.locationManager1.location
+//        let distance = currentlocation.distanceFromLocation(initialLocation)
+//        print("\(distance)")
         
         loadInitialData()
         mapView.addAnnotations(artworks)

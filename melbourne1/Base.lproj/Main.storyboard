@@ -137,7 +137,7 @@
             </objects>
             <point key="canvasLocation" x="2517" y="-474"/>
         </scene>
-        <!--Artworks-->
+        <!--Nearby-->
         <scene sceneID="G6l-U9-fTe">
             <objects>
                 <tableViewController id="Cqo-1r-HCd" customClass="TableViewController" customModule="melbourne1" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,7 +150,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gN0-32-Xb2" id="PVn-MR-TP3">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="91"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="nameL" text="nameL" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3H8-YG-N5N">
@@ -207,7 +207,7 @@
                             <outlet property="delegate" destination="Cqo-1r-HCd" id="f1i-ku-GCq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Artworks" id="gkq-n4-MWd"/>
+                    <navigationItem key="navigationItem" title="Nearby" id="gkq-n4-MWd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsT-eb-xze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -327,11 +327,11 @@
             </objects>
             <point key="canvasLocation" x="1148" y="636"/>
         </scene>
-        <!--Artworks-->
+        <!--Nearby-->
         <scene sceneID="Hpd-bS-IM3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RXa-1i-j07" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Artworks" image="list tab" id="KOm-uh-f80"/>
+                    <tabBarItem key="tabBarItem" title="Nearby" image="list tab" id="KOm-uh-f80"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DOf-wj-ijZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

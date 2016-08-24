@@ -8,24 +8,41 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
-
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, CLLocationManagerDelegate {
 
     var artworks = [Artworks]()
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         fetchArtworks()
         
     }
     func fetchArtworks(){
+        
+        let locationManager1 = CLLocationManager()
+        locationManager1.delegate = self
+        locationManager1.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager1.requestWhenInUseAuthorization()
+        locationManager1.startUpdatingLocation()
+
+        
+    
+        
+        
+        
+        let locValue:CLLocationCoordinate2D = locationManager1.location!.coordinate
+        
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        //let initialLocation = CLLocation(latitude: -37.8885677, longitude: 145.045028)
+        let currentlocation = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+        //let i111 = self.locationManager1.location
+       
+
         
         let ref = Firebase(url: "https://melbourne-footprint.firebaseio.com/")
       
@@ -35,7 +52,32 @@ class TableViewController: UITableViewController {
             {
                 let artwork = Artworks()
                 artwork.setValuesForKeysWithDictionary(dictionary)
+                
+                let fullNameArr = artwork.Coordinates!.componentsSeparatedByString(",")
+                
+                var firstName: String = fullNameArr[0]
+                var lastName: String = fullNameArr[1]
+                
+                var latitude1 = String(firstName.characters.dropFirst())
+                var longtitude1 = String(lastName.characters.dropLast())
+                
+                
+                let latitude2 = (latitude1  as NSString).doubleValue
+                let longitude2 = (longtitude1 as NSString).doubleValue
+                
+                let initialLocation = CLLocation(latitude: latitude2, longitude: longitude2)
+                
+                let distance = currentlocation.distanceFromLocation(initialLocation)
+              
+                
+                if distance < 1500{
                 self.artworks.append(artwork)
+                
+                }
+                
+                
+                
+                //self.artworks.removeAll()
                 dispatch_async(dispatch_get_main_queue(),{self.tableView.reloadData() } )
         }
         }, withCancelBlock: nil)
@@ -51,7 +93,7 @@ class TableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 5
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,6 +105,21 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as! TableViewCell
 
+        
+        let locationManager1 = CLLocationManager()
+        locationManager1.delegate = self
+        locationManager1.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager1.requestWhenInUseAuthorization()
+        locationManager1.startUpdatingLocation()
+        let locValue:CLLocationCoordinate2D = locationManager1.location!.coordinate
+      
+        let currentlocation = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+        
+        
+        
+        
+        
+        
         cell.addressL.lineBreakMode = NSLineBreakMode.ByWordWrapping
         cell.addressL.numberOfLines = 0;
         cell.nameL.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -70,20 +127,29 @@ class TableViewController: UITableViewController {
 
         let artwork = artworks[indexPath.row]
         cell.nameL.text = artwork.Name
-        cell.addressL.text = artwork.Address
+        
+        let fullNameArr = artwork.Coordinates!.componentsSeparatedByString(",")
+        
+        let firstName: String = fullNameArr[0]
+        let lastName: String = fullNameArr[1]
+        
+        let latitude1 = String(firstName.characters.dropFirst())
+        let longtitude1 = String(lastName.characters.dropLast())
+        
+        
+        let latitude2 = (latitude1  as NSString).doubleValue
+        let longitude2 = (longtitude1 as NSString).doubleValue
+        
+        let initialLocation = CLLocation(latitude: latitude2, longitude: longitude2)
+
+        let distance = currentlocation.distanceFromLocation(initialLocation)
+        let doubleDis : Double = distance
+        let intDis : Int = Int(doubleDis)
+        
+        cell.addressL.text = "\(intDis)m"
         if let photo = artwork.Photo{
             cell.tableImageView.loadImageUsingCacheWithUrlString(photo)
-//            let url = NSURL(string: photo)
-//            NSURLSession.sharedSession().dataTaskWithURL(url!,completionHandler: {(data,response,error) in
-//                if error != nil {
-//                print(error)
-//                return
-//                }
-//                dispatch_async(dispatch_get_main_queue(),{
-//                    cell.tableImageView.image = UIImage(data:data!)
-//                    })
-//        
-//        }).resume()
+
         }
         return cell
     }

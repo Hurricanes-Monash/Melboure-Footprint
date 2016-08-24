@@ -39,24 +39,8 @@ extension MapViewController: MKMapViewDelegate {
                 
                 view.leftCalloutAccessoryView = buttonLeft
                 
-                //                let image1 = UIImage(named: "list tab")
-                //                view.leftCalloutAccessoryView = UIButton(type: .Custom).setImage(image1, forState: UIControlState.Normal) as! UIView
-                //                let btnImage = UIImage(named: "list tab")
-                //                var btn : UIButton?
-                //                let playButton  = UIButton(type: .Custom)
-                //                print("yes")
-                //                let image1 = UIImage(named: "list tab")
-                //
-                //                    playButton.setImage(let image1 = UIImage(named: "list tab"))
-                //                    view.leftCalloutAccessoryView = playButton as UIView
-                
-                
-                //
-                //                view.leftCalloutAccessoryView = btn!.setImage(btnImage , forState: UIControlState.Normal)
-                // view.leftCalloutAccessoryView = UIImageView(image: UIImage(named: "list tab"))
             }
             
-            // view.pinColor = annotation.pinColor()
             
             
             return view
