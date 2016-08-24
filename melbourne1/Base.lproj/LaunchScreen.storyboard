@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,17 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen" translatesAutoresizingMaskIntoConstraints="NO" id="6nF-xV-LNN">
-                                <rect key="frame" x="59" y="28" width="482" height="552"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="482" id="TKt-iH-TpK"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="28" width="600" height="552"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6nF-xV-LNN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5zd-2P-Xh6"/>
-                            <constraint firstItem="6nF-xV-LNN" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="nGy-Vx-5Kb"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="6nF-xV-LNN" secondAttribute="bottom" constant="20" id="uDq-4z-nWP"/>
+                            <constraint firstItem="6nF-xV-LNN" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" constant="20" id="272-sX-Lzn"/>
+                            <constraint firstItem="6nF-xV-LNN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="6Pj-U7-RK2"/>
+                            <constraint firstItem="6nF-xV-LNN" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="NUW-7v-IQu"/>
+                            <constraint firstAttribute="bottom" secondItem="6nF-xV-LNN" secondAttribute="bottom" constant="20" symbolic="YES" id="eTV-YX-mb8"/>
                         </constraints>
                     </view>
                 </viewController>

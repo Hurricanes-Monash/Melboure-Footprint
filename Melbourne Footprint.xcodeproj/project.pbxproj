@@ -63,7 +63,7 @@
 		A60EA0E31D64AA3500648696 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		A613B1CE1D65565B00619D2F /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A613B1D01D655A0300619D2F /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		A640AC371D6494DC005A4F84 /* melbourne1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = melbourne1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A640AC371D6494DC005A4F84 /* Melbourne Footprint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Melbourne Footprint.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A640AC3A1D6494DC005A4F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A640AC3C1D6494DC005A4F84 /* ViewDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDetailsController.swift; sourceTree = "<group>"; };
 		A640AC3F1D6494DC005A4F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,10 +71,10 @@
 		A640AC441D6494DC005A4F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A640AC471D6494DC005A4F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A640AC491D6494DC005A4F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A640AC4E1D6494DC005A4F84 /* melbourne1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = melbourne1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A640AC4E1D6494DC005A4F84 /* Melbourne Footprint.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Melbourne Footprint.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A640AC521D6494DC005A4F84 /* melbourne1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = melbourne1Tests.swift; sourceTree = "<group>"; };
 		A640AC541D6494DC005A4F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A640AC591D6494DC005A4F84 /* melbourne1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = melbourne1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A640AC591D6494DC005A4F84 /* Melbourne Footprint.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Melbourne Footprint.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A640AC5D1D6494DC005A4F84 /* melbourne1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = melbourne1UITests.swift; sourceTree = "<group>"; };
 		A640AC5F1D6494DC005A4F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6BFB5AE1D65D1DB00E75E27 /* Artworks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artworks.swift; sourceTree = "<group>"; };
@@ -131,9 +131,9 @@
 		A640AC381D6494DC005A4F84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A640AC371D6494DC005A4F84 /* melbourne1.app */,
-				A640AC4E1D6494DC005A4F84 /* melbourne1Tests.xctest */,
-				A640AC591D6494DC005A4F84 /* melbourne1UITests.xctest */,
+				A640AC371D6494DC005A4F84 /* Melbourne Footprint.app */,
+				A640AC4E1D6494DC005A4F84 /* Melbourne Footprint.xctest */,
+				A640AC591D6494DC005A4F84 /* Melbourne Footprint.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,9 +190,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A640AC361D6494DC005A4F84 /* melbourne1 */ = {
+		A640AC361D6494DC005A4F84 /* Melbourne Footprint */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A640AC621D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "melbourne1" */;
+			buildConfigurationList = A640AC621D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "Melbourne Footprint" */;
 			buildPhases = (
 				A640AC331D6494DC005A4F84 /* Sources */,
 				A640AC341D6494DC005A4F84 /* Frameworks */,
@@ -202,14 +202,14 @@
 			);
 			dependencies = (
 			);
-			name = melbourne1;
+			name = "Melbourne Footprint";
 			productName = melbourne1;
-			productReference = A640AC371D6494DC005A4F84 /* melbourne1.app */;
+			productReference = A640AC371D6494DC005A4F84 /* Melbourne Footprint.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A640AC4D1D6494DC005A4F84 /* melbourne1Tests */ = {
+		A640AC4D1D6494DC005A4F84 /* Melbourne FootprintTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A640AC651D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "melbourne1Tests" */;
+			buildConfigurationList = A640AC651D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "Melbourne FootprintTests" */;
 			buildPhases = (
 				A640AC4A1D6494DC005A4F84 /* Sources */,
 				A640AC4B1D6494DC005A4F84 /* Frameworks */,
@@ -220,14 +220,14 @@
 			dependencies = (
 				A640AC501D6494DC005A4F84 /* PBXTargetDependency */,
 			);
-			name = melbourne1Tests;
+			name = "Melbourne FootprintTests";
 			productName = melbourne1Tests;
-			productReference = A640AC4E1D6494DC005A4F84 /* melbourne1Tests.xctest */;
+			productReference = A640AC4E1D6494DC005A4F84 /* Melbourne Footprint.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A640AC581D6494DC005A4F84 /* melbourne1UITests */ = {
+		A640AC581D6494DC005A4F84 /* Melbourne FootprintUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A640AC681D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "melbourne1UITests" */;
+			buildConfigurationList = A640AC681D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "Melbourne FootprintUITests" */;
 			buildPhases = (
 				A640AC551D6494DC005A4F84 /* Sources */,
 				A640AC561D6494DC005A4F84 /* Frameworks */,
@@ -238,9 +238,9 @@
 			dependencies = (
 				A640AC5B1D6494DC005A4F84 /* PBXTargetDependency */,
 			);
-			name = melbourne1UITests;
+			name = "Melbourne FootprintUITests";
 			productName = melbourne1UITests;
-			productReference = A640AC591D6494DC005A4F84 /* melbourne1UITests.xctest */;
+			productReference = A640AC591D6494DC005A4F84 /* Melbourne Footprint.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 				TargetAttributes = {
 					A640AC361D6494DC005A4F84 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = X652EFEEQ5;
+						DevelopmentTeam = BRJW2E4722;
 					};
 					A640AC4D1D6494DC005A4F84 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -267,7 +267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A640AC321D6494DC005A4F84 /* Build configuration list for PBXProject "melbourne1" */;
+			buildConfigurationList = A640AC321D6494DC005A4F84 /* Build configuration list for PBXProject "Melbourne Footprint" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -280,9 +280,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A640AC361D6494DC005A4F84 /* melbourne1 */,
-				A640AC4D1D6494DC005A4F84 /* melbourne1Tests */,
-				A640AC581D6494DC005A4F84 /* melbourne1UITests */,
+				A640AC361D6494DC005A4F84 /* Melbourne Footprint */,
+				A640AC4D1D6494DC005A4F84 /* Melbourne FootprintTests */,
+				A640AC581D6494DC005A4F84 /* Melbourne FootprintUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -355,12 +355,12 @@
 /* Begin PBXTargetDependency section */
 		A640AC501D6494DC005A4F84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A640AC361D6494DC005A4F84 /* melbourne1 */;
+			target = A640AC361D6494DC005A4F84 /* Melbourne Footprint */;
 			targetProxy = A640AC4F1D6494DC005A4F84 /* PBXContainerItemProxy */;
 		};
 		A640AC5B1D6494DC005A4F84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A640AC361D6494DC005A4F84 /* melbourne1 */;
+			target = A640AC361D6494DC005A4F84 /* Melbourne Footprint */;
 			targetProxy = A640AC5A1D6494DC005A4F84 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -481,7 +481,7 @@
 				INFOPLIST_FILE = melbourne1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.melbourne1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Melbourne Footprint";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -499,7 +499,7 @@
 				INFOPLIST_FILE = melbourne1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.melbourne1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Melbourne Footprint";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -511,8 +511,8 @@
 				INFOPLIST_FILE = melbourne1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.melbourne1Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/melbourne1.app/melbourne1";
+				PRODUCT_NAME = "Melbourne Footprint";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Melbourne Footprint.app/Melbourne Footprint";
 			};
 			name = Debug;
 		};
@@ -523,8 +523,8 @@
 				INFOPLIST_FILE = melbourne1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.melbourne1Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/melbourne1.app/melbourne1";
+				PRODUCT_NAME = "Melbourne Footprint";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Melbourne Footprint.app/Melbourne Footprint";
 			};
 			name = Release;
 		};
@@ -534,7 +534,7 @@
 				INFOPLIST_FILE = melbourne1UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.melbourne1UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Melbourne Footprint";
 				TEST_TARGET_NAME = melbourne1;
 			};
 			name = Debug;
@@ -545,7 +545,7 @@
 				INFOPLIST_FILE = melbourne1UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.melbourne1UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Melbourne Footprint";
 				TEST_TARGET_NAME = melbourne1;
 			};
 			name = Release;
@@ -553,7 +553,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A640AC321D6494DC005A4F84 /* Build configuration list for PBXProject "melbourne1" */ = {
+		A640AC321D6494DC005A4F84 /* Build configuration list for PBXProject "Melbourne Footprint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A640AC601D6494DC005A4F84 /* Debug */,
@@ -562,7 +562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A640AC621D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "melbourne1" */ = {
+		A640AC621D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "Melbourne Footprint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A640AC631D6494DC005A4F84 /* Debug */,
@@ -571,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A640AC651D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "melbourne1Tests" */ = {
+		A640AC651D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "Melbourne FootprintTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A640AC661D6494DC005A4F84 /* Debug */,
@@ -580,7 +580,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A640AC681D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "melbourne1UITests" */ = {
+		A640AC681D6494DC005A4F84 /* Build configuration list for PBXNativeTarget "Melbourne FootprintUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A640AC691D6494DC005A4F84 /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A640AC361D6494DC005A4F84"
-               BuildableName = "melbourne1.app"
-               BlueprintName = "melbourne1"
-               ReferencedContainer = "container:melbourne1.xcodeproj">
+               BuildableName = "Melbourne Footprint.app"
+               BlueprintName = "Melbourne Footprint"
+               ReferencedContainer = "container:Melbourne Footprint.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A640AC4D1D6494DC005A4F84"
-               BuildableName = "melbourne1Tests.xctest"
-               BlueprintName = "melbourne1Tests"
-               ReferencedContainer = "container:melbourne1.xcodeproj">
+               BuildableName = "Melbourne Footprint.xctest"
+               BlueprintName = "Melbourne FootprintTests"
+               ReferencedContainer = "container:Melbourne Footprint.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A640AC581D6494DC005A4F84"
-               BuildableName = "melbourne1UITests.xctest"
-               BlueprintName = "melbourne1UITests"
-               ReferencedContainer = "container:melbourne1.xcodeproj">
+               BuildableName = "Melbourne Footprint.xctest"
+               BlueprintName = "Melbourne FootprintUITests"
+               ReferencedContainer = "container:Melbourne Footprint.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A640AC361D6494DC005A4F84"
-            BuildableName = "melbourne1.app"
-            BlueprintName = "melbourne1"
-            ReferencedContainer = "container:melbourne1.xcodeproj">
+            BuildableName = "Melbourne Footprint.app"
+            BlueprintName = "Melbourne Footprint"
+            ReferencedContainer = "container:Melbourne Footprint.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A640AC361D6494DC005A4F84"
-            BuildableName = "melbourne1.app"
-            BlueprintName = "melbourne1"
-            ReferencedContainer = "container:melbourne1.xcodeproj">
+            BuildableName = "Melbourne Footprint.app"
+            BlueprintName = "Melbourne Footprint"
+            ReferencedContainer = "container:Melbourne Footprint.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A640AC361D6494DC005A4F84"
-            BuildableName = "melbourne1.app"
-            BlueprintName = "melbourne1"
-            ReferencedContainer = "container:melbourne1.xcodeproj">
+            BuildableName = "Melbourne Footprint.app"
+            BlueprintName = "Melbourne Footprint"
+            ReferencedContainer = "container:Melbourne Footprint.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
