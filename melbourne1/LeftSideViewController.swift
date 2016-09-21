@@ -18,6 +18,7 @@ class LeftSideViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(animated: Bool) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.tableView.reloadData()
+
         })
     }
     
@@ -92,6 +93,8 @@ class LeftSideViewController: UIViewController, UITableViewDelegate, UITableView
             cell.signOutAction = {
                     let loginManager = FBSDKLoginManager()
                     loginManager.logOut()
+                FBSDKAccessToken.setCurrentAccessToken(nil)
+                FBSDKProfile.setCurrentProfile(nil)
                     GIDSignIn.sharedInstance().signOut()
                     try!FIRAuth.auth()?.signOut()
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in

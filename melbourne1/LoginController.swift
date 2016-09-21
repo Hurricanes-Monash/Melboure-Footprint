@@ -19,8 +19,6 @@ class LoginController: UIViewController, GIDSignInUIDelegate,GIDSignInDelegate,F
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    self.facebookLoginButton.center = self.view.center
-        self.googleLoginButton.center = self.view.center
     self.facebookLoginButton.readPermissions=["public_profile","email","user_friends"]
         self.facebookLoginButton.delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -52,6 +50,10 @@ class LoginController: UIViewController, GIDSignInUIDelegate,GIDSignInDelegate,F
                 print(error?.localizedDescription)
                 return
             }
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.navigationController?.popViewControllerAnimated(true)
+                
+            })
             print("login google")
             if let user = FIRAuth.auth()?.currentUser {
                 let name = user.displayName
@@ -65,7 +67,6 @@ class LoginController: UIViewController, GIDSignInUIDelegate,GIDSignInDelegate,F
                 print(uid)
                 let ref = FIRDatabase.database().referenceFromURL("https://melbourne-footprint.firebaseio.com/")
                 ref.child("users/\(uid)/email").setValue(email)
-                self.navigationController?.popViewControllerAnimated(true)
                 
             } else {
                 // No user is signed in.
@@ -93,6 +94,10 @@ class LoginController: UIViewController, GIDSignInUIDelegate,GIDSignInDelegate,F
             print(error?.localizedDescription)
                 return
             }
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.navigationController?.popViewControllerAnimated(true)
+                
+            })
             print("login facebook")
             if let user = FIRAuth.auth()?.currentUser {
                 let name = user.displayName
