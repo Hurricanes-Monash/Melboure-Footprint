@@ -65,6 +65,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate,GIDSignInDelegate,F
                 print(uid)
                 let ref = FIRDatabase.database().referenceFromURL("https://melbourne-footprint.firebaseio.com/")
                 ref.child("users/\(uid)/email").setValue(email)
+                self.navigationController?.popViewControllerAnimated(true)
                 
             } else {
                 // No user is signed in.
@@ -105,6 +106,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate,GIDSignInDelegate,F
                 print(uid)
                 let ref = FIRDatabase.database().referenceFromURL("https://melbourne-footprint.firebaseio.com/")
                 ref.child("users/\(uid)/email").setValue(email)
+                
                 
             } else {
                 // No user is signed in.

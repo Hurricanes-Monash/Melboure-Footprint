@@ -19,12 +19,12 @@ class favourateViewController: UIViewController,UITableViewDataSource,UITableVie
     @IBAction func logInViewButton(sender: AnyObject) {
         
     }
-    @IBAction func logout(sender: AnyObject) {
-        let loginManager = FBSDKLoginManager()
-        loginManager.logOut()
-        GIDSignIn.sharedInstance().signOut()
-        try!FIRAuth.auth()?.signOut()
+    
+    @IBAction func favoriteLoginAction(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.drawerContainer?.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
+    
     override func viewWillAppear(animated: Bool) {
         self.favourateTableView.delegate = self
         self.favourateTableView.dataSource = self
@@ -128,6 +128,48 @@ class favourateViewController: UIViewController,UITableViewDataSource,UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
     
+    // Override to support conditional editing of the table view.
+     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+        
+    }
+    
+    
+    
+    // Override to support editing the table view.
+     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            let ref = FIRDatabase.database().referenceFromURL("https://melbourne-footprint.firebaseio.com/")
+            ref.child("users/\(self.userid!)/favorite/\(artworks[indexPath.row].Name!)").removeValue()
+            self.artworks.removeAtIndex(indexPath.row)
+         self.favourateTableView.reloadData()
+        }
+        
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "viewArtwork3"
+        {
+            
+            let indexPath = self.favourateTableView.indexPathForSelectedRow!
+            let controller: ViewDetailsController = segue.destinationViewController
+                as! ViewDetailsController
+            let artworkDetail: Artworks
+              artworkDetail = artworks[indexPath.row]
+          
+            
+            controller.currentArtwork = artworkDetail            //self.tabBarController?.tabBar.hidden = true
+            controller.hidesBottomBarWhenPushed = true
+        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    
+
+
   
     //get data from database
     func fetchArtworks(){

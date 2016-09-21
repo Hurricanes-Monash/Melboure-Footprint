@@ -40,6 +40,7 @@
 		A68E39531D8F841500F198CE /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E394C1D8F841500F198CE /* MMDrawerController.m */; };
 		A68E39541D8F841500F198CE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E394F1D8F841500F198CE /* MMDrawerVisualState.m */; };
 		A68E39551D8F841500F198CE /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68E39511D8F841500F198CE /* UIViewController+MMDrawerController.m */; };
+		A68E39581D8FDCA200F198CE /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E39571D8FDCA200F198CE /* UserViewCell.swift */; };
 		A6ABDA711D8EB0DC00F19312 /* favouriteTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABDA701D8EB0DC00F19312 /* favouriteTableCell.swift */; };
 		A6BFB5AF1D65D1DB00E75E27 /* Artworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB5AE1D65D1DB00E75E27 /* Artworks.swift */; };
 		A6BFB5B21D66EB8000E75E27 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB5B11D66EB8000E75E27 /* Extensions.swift */; };
@@ -118,6 +119,7 @@
 		A68E394F1D8F841500F198CE /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		A68E39501D8F841500F198CE /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		A68E39511D8F841500F198CE /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		A68E39571D8FDCA200F198CE /* UserViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		A6ABDA701D8EB0DC00F19312 /* favouriteTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = favouriteTableCell.swift; sourceTree = "<group>"; };
 		A6BFB5AE1D65D1DB00E75E27 /* Artworks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artworks.swift; sourceTree = "<group>"; };
 		A6BFB5B11D66EB8000E75E27 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 				A68E39541D8F841500F198CE /* MMDrawerVisualState.m in Sources */,
 				A613B1CF1D65565B00619D2F /* TableViewController.swift in Sources */,
 				4CE1FA571D660BE5003BBD68 /* ArtworkForMap.swift in Sources */,
+				A68E39581D8FDCA200F198CE /* UserViewCell.swift in Sources */,
 				4C38FB5F1D76FF5A0054D548 /* Utilities.swift in Sources */,
 				A62349E31D88428A0074FA5D /* LoginController.swift in Sources */,
 			);

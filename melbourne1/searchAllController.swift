@@ -13,9 +13,11 @@ import Firebase
 class searchAllController: UITableViewController,CLLocationManagerDelegate {
     let  flag = true
     var index = 1;
+    var userid:String?
     let searchController = UISearchController(searchResultsController:nil)
     //add search function
     var artworks = [Artworks]()
+    var favoriteArtwork = [Artworks]()
     var filteredArtwork = [Artworks]()
     var menuView: BTNavigationDropdownMenu!
     var category : String?
@@ -203,6 +205,9 @@ class searchAllController: UITableViewController,CLLocationManagerDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("searchAllCell", forIndexPath: indexPath) as! searchAllCellController
         
+        let image = UIImage(named: "Heart_icon.png")
+        cell.faButton.setImage(image, forState: UIControlState.Normal)
+        cell.isFavorate2 = false
         let locationManager1 = CLLocationManager()
         locationManager1.delegate = self
         locationManager1.desiredAccuracy = kCLLocationAccuracyBest
@@ -250,6 +255,21 @@ class searchAllController: UITableViewController,CLLocationManagerDelegate {
             print(photo)
             
         }
+        if self.userid != nil
+        {
+            for currentArk in self.favoriteArtwork
+            {
+                if artwork.Name == currentArk.Name
+                {
+                    let image = UIImage(named: "heart_icon_selected")
+                    cell.faButton.setImage(image, forState: UIControlState.Normal)
+                    cell.isFavorate2 = true
+                }
+                
+            }
+            
+        }
+
         cell.onButtonTapped = {
             if let user = FIRAuth.auth()?.currentUser {
                 // User is signed in.
