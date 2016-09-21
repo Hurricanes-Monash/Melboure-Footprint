@@ -15,34 +15,36 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
     var flag : Bool?
     var index = 1;
     let searchController = UISearchController(searchResultsController:nil)
-    @IBOutlet weak var allItemT: UIBarButtonItem!
+//    @IBOutlet weak var allItemT: UIBarButtonItem!
     //set nearby and all transform
-    @IBAction func allItem(sender: AnyObject) {
-        if self.index%2 != 0{
-            self.flag = true
-            artworks.removeAll()
-            self.tableView.reloadData()
-            fetchArtworks()
-            self.allItemT.title="Nearby"
-            self.navigationItem.title = "ALL"
-            self.index = index + 1
-        }
-        else
-        {
-            self.flag = false
-            artworks.removeAll()
-            self.tableView.reloadData()
-            fetchArtworks()
-            self.allItemT.title="All"
-            self.navigationItem.title = "Nearby"
-            self.index = index + 1
-        }
-
-    }
+//    @IBAction func allItem(sender: AnyObject) {
+//        if self.index%2 != 0{
+//            self.flag = true
+//            artworks.removeAll()
+//            self.tableView.reloadData()
+//            fetchArtworks()
+//            self.allItemT.title="Nearby"
+//            self.navigationItem.title = "ALL"
+//            self.index = index + 1
+//        }
+//        else
+//        {
+//            self.flag = false
+//            artworks.removeAll()
+//            self.tableView.reloadData()
+//            fetchArtworks()
+//            self.allItemT.title="All"
+//            self.navigationItem.title = "Nearby"
+//            self.index = index + 1
+//        }
+//
+//    }
     
     
     //add search function
     var artworks = [Artworks]()
+    var favoriteArtwork = [Artworks]()
+    var userid :String?
     var filteredArtwork = [Artworks]()
     func filterContentForSearchText(searchText:String,scope:String = "All"){
         filteredArtwork = artworks.filter{
@@ -54,20 +56,67 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
         
-        
+        if let user = FIRAuth.auth()?.currentUser {
+            // User is signed in.
+            self.userid = user.uid
+            self.favoriteArtwork.removeAll()
+            fetchFavoriteArtworks()
+            
+        } else {
+            // No user is signed in.
+            
+        }
         
         self.flag = false
         fetchArtworks()
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
+//        searchController.searchResultsUpdater = self
+//        searchController.dimsBackgroundDuringPresentation = false
+//        definesPresentationContext = true
+//        tableView.tableHeaderView = searchController.searchBar
+
+
+    }
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        if let user = FIRAuth.auth()?.currentUser {
+//            // User is signed in.
+//            self.userid = user.uid
+//            fetchFavoriteArtworks()
+//           
+//        } else {
+//            // No user is signed in.
+//    
+//        }
+//      
+//        self.flag = false
+//        fetchArtworks()
+//        searchController.searchResultsUpdater = self
+//        searchController.dimsBackgroundDuringPresentation = false
+//        definesPresentationContext = true
+//        tableView.tableHeaderView = searchController.searchBar
+//        
+//    }
+    //get data from database
+    func fetchFavoriteArtworks(){
+        let ref = FIRDatabase.database().referenceFromURL("https://melbourne-footprint.firebaseio.com/")
+        ref.child("users/\(self.userid!)/favorite").observeEventType(.ChildAdded, withBlock: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject]
+            {
+                let artwork = Artworks()
+                artwork.setValuesForKeysWithDictionary(dictionary)
+                self.favoriteArtwork.append(artwork)
+                
+            }
+            }, withCancelBlock: nil)
+        
+        
         
     }
-    
+
     //get data from database
     func fetchArtworks(){
         
@@ -196,8 +245,10 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
     //define cell in tablebar to show artwokr
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as! TableViewCell
+       
         let image = UIImage(named: "Heart_icon.png")
         cell.faButton.setImage(image, forState: UIControlState.Normal)
+        cell.isFavorate = false
         let locationManager1 = CLLocationManager()
         locationManager1.delegate = self
         locationManager1.desiredAccuracy = kCLLocationAccuracyBest
@@ -242,15 +293,28 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
         cell.addressL.text = "\(intDis)m"
         if let photo = artwork.Photo{
             cell.tableImageView.loadImageUsingCacheWithUrlString(photo)
-            print(photo)
             
         }
-        cell.onButtonTapped = {
-        if let user = FIRAuth.auth()?.currentUser {
+        if self.userid != nil
+        {
+            for currentArk in self.favoriteArtwork
+            {
+                if artwork.Name == currentArk.Name
+                {
+                    let image = UIImage(named: "heart_icon_selected")
+                    cell.faButton.setImage(image, forState: UIControlState.Normal)
+                    cell.isFavorate = true
+                }
+               
+            }
+            
+        }
+               cell.onButtonTapped = {
+     
+            if let user = FIRAuth.auth()?.currentUser {
             // User is signed in.
             let uid = user.uid
             let ref = FIRDatabase.database().referenceFromURL("https://melbourne-footprint.firebaseio.com/")
-            print(!cell.isFavorate)
             if !cell.isFavorate
             {
                 ref.child("users/\(uid)/favorite/\(artwork.Name!)").setValue(["Address": "\(artwork.Address!)",
