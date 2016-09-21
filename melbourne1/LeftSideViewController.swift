@@ -137,8 +137,8 @@ class LeftSideViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "aboutSegue" {
-//            let inventoryViewController = segue.destinationViewController as! AboutViewController
+//        if segue.identifier == "ShowDetail" {
+//            let inventoryViewController = segue.destinationViewController as! InventoryViewController
 //            
 //            // Get selected item via table cell and pass to controller
 //            if let selectedCell = sender as? UITableViewCell {
@@ -150,11 +150,9 @@ class LeftSideViewController: UIViewController, UITableViewDelegate, UITableView
 //    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-//        if indexPath.section == 3{
-//            performSegueWithIdentifier("lanSegue", sender: self)
-//        }
+        // cell selected code here
     }
 }
+    
 
 

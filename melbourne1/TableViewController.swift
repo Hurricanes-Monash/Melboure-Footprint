@@ -56,8 +56,19 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            // User is signed in.
+            self.userid = user.uid
+            self.favoriteArtwork.removeAll()
+            fetchFavoriteArtworks()
+            
+        } else {
+            // No user is signed in.
+            
+        }
+        
         self.flag = false
         fetchArtworks()
 //        searchController.searchResultsUpdater = self
@@ -349,7 +360,8 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
             }else {
                 artworkDetail = artworks[indexPath.row]
             }
-
+            
+            
             controller.currentArtwork = artworkDetail            //self.tabBarController?.tabBar.hidden = true
             controller.hidesBottomBarWhenPushed = true
         }
@@ -365,6 +377,4 @@ extension TableViewController : UISearchResultsUpdating {
     {
         filterContentForSearchText(searchController.searchBar.text!)
 }
-    
-    
 }

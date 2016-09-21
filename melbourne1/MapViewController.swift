@@ -171,6 +171,9 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate{
     
     
 
+    
+
+    
 
     
     func loadInitialData() {
@@ -249,7 +252,7 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate{
             //            let current = locationManager1.location?.coordinate
             //            print(current)
             //
-            let currentlocation = CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+                        let currentlocation = CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
             
             let initialLocation = CLLocation(latitude: region.coordinate.latitude, longitude: region.coordinate.longitude)
             
