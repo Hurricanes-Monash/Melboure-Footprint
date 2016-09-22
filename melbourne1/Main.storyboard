@@ -308,7 +308,7 @@
                     <navigationItem key="navigationItem" title="Map" id="duc-ne-oM0">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="YjG-QT-uG0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sKG-85-RKo">
-                                <rect key="frame" x="16" y="10" width="24" height="24"/>
+                                <rect key="frame" x="20" y="10" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="setting"/>
                                 <connections>
@@ -631,11 +631,11 @@
             </objects>
             <point key="canvasLocation" x="1658" y="-516"/>
         </scene>
-        <!--Favourite-->
+        <!--Favorites-->
         <scene sceneID="vYK-aa-QB1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mBd-hf-AVq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourite" image="Favourite" id="kEi-BE-sfx"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="Favourite" id="kEi-BE-sfx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ka-s6-bxv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -791,7 +791,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mornitoring Radius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jal-L7-jeA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monitoring Radius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jal-L7-jeA">
                                                     <rect key="frame" x="8" y="8" width="165" height="39"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="165" id="iKE-b1-9mJ"/>

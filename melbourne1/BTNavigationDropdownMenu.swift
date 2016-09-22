@@ -48,7 +48,7 @@ public class BTNavigationDropdownMenu: UIView {
             return self.menuArrow.tintColor
         }
         set(color) {
-            self.menuArrow.tintColor = color
+            self.menuArrow.tintColor = UIColor.blackColor()
         }
     }
     
