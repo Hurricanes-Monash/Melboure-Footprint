@@ -8,8 +8,17 @@
 
 import UIKit
 
+
+/*protocol addSensorDelegate{
+    func addSensor(_number: Int)
+}
+*/
+
 class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate
  {
+   // var delegate: addSensorDelegate?
+    var number : Int?
+    var tableTitle : String?
 
     @IBOutlet weak var pickerView: UIPickerView!
     var pageViewController: UIPageViewController?
@@ -18,13 +27,13 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
         ["Color","Pressure"," Temperature"]
     ]
 
-    var pickerDataSource = ["White", "Red", "Green", "Blue"];
 
     override func viewDidLoad() {
         super.viewDidLoad()
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
+
         pickerView.selectRow(2, inComponent:sizeComponent, animated: false)
         updateLabel()
         // Do any additional setup after loading the view, typically from a nib.
@@ -107,12 +116,38 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
     
     //MARK: - Instance Methods
     func updateLabel(){
-        let size = pickerData[sizeComponent][pickerView.selectedRow(inComponent: sizeComponent)]
-        let topping = pickerData[toppingComponent][pickerView.selectedRow(inComponent: toppingComponent)]
-        pizzaLabel.text = "You are looking for: " + size + " updates of " + topping
+        let numberofUpdate = pickerData[sizeComponent][pickerView.selectedRow(inComponent: sizeComponent)]
+        let type = pickerData[toppingComponent][pickerView.selectedRow(inComponent: toppingComponent)]
+        pizzaLabel.text = "You are looking for: " + numberofUpdate + " updates of " + type
+        
+        print(numberofUpdate)
+        tableTitle = type
+        number = Int(numberofUpdate)!
+        
     }
  
-       
+    @IBAction func done(_ sender: AnyObject) {
+        print("no")
+
+    //    self.delegate?.addSensor(_number: 6)
+    }
+    
+
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier=="showSensorData"){
+            //let selectedRow = (tableView.indexPathForSelectedRow as NSIndexPath?)?.row
+            if let dest = segue.destination as?
+                SensorTableViewController{
+                dest.title = tableTitle
+                dest.numberofRow = number
+            }
+
+    
+}
+
+}
 }
 
 

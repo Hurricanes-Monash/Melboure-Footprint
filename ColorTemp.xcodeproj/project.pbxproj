@@ -105,13 +105,13 @@
 			children = (
 				4CC84A581DA763F200FB3CF4 /* AppDelegate.swift */,
 				4CC84A5A1DA763F200FB3CF4 /* RootViewController.swift */,
+				4CE624441DAE385D0007DAEB /* SensorTableViewController.swift */,
 				4CC84A5C1DA763F200FB3CF4 /* DataViewController.swift */,
 				4CC84A5E1DA763F200FB3CF4 /* ModelController.swift */,
 				4CC84A601DA763F200FB3CF4 /* Main.storyboard */,
 				4CC84A631DA763F200FB3CF4 /* Assets.xcassets */,
 				4CC84A651DA763F200FB3CF4 /* LaunchScreen.storyboard */,
 				4CC84A681DA763F200FB3CF4 /* Info.plist */,
-				4CE624441DAE385D0007DAEB /* SensorTableViewController.swift */,
 			);
 			path = ColorTemp;
 			sourceTree = "<group>";

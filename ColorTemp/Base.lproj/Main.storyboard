@@ -57,7 +57,8 @@
                     <navigationItem key="navigationItem" id="f2u-aT-UCe">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="vIw-LK-Zfb">
                             <connections>
-                                <segue destination="GIB-Qm-JtB" kind="show" id="5KW-ib-XJ3"/>
+                                <action selector="done:" destination="Kg8-BY-IL0" id="2ga-DI-CYr"/>
+                                <segue destination="GIB-Qm-JtB" kind="show" identifier="showSensorData" id="5KW-ib-XJ3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -68,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36H-wm-S6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="-543"/>
+            <point key="canvasLocation" x="984.79999999999995" y="-558.17091454272872"/>
         </scene>
         <!--Sensor Table View Controller-->
         <scene sceneID="kRw-vs-xt6">
@@ -79,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cC1-Q5-6LZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Basic" id="cC1-Q5-6LZ">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cC1-Q5-6LZ" id="MrD-kd-vfi">
@@ -96,7 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dk-hd-WT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1802" y="-411"/>
+            <point key="canvasLocation" x="1800.8" y="-411.544227886057"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="snT-py-3hH">
