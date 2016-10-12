@@ -87,7 +87,52 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
     let sizeComponent = 0
     let toppingComponent = 1
     
-    
+    func downloadData(number:String)
+    {
+        var url:URL
+        url = URL(string: "http://192.168.0.26:8081/history/"+number)!
+        print(url)
+        let session = URLSession.shared
+        let task = session.dataTask(with: url){
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("Everyone is fine, file downloaded successfully.")
+                
+                do{
+                    let jsonData = try JSONSerialization.jsonObject(with: data!,options:.allowFragments) as! NSArray
+                         print(jsonData)
+                    for item in (jsonData as? [[String:Any]])!
+                    {
+                        print(item)
+                        
+                        
+                        let pressure = (item["pressure"] as? NSNumber)!
+                            print(pressure)
+                        
+
+                    
+                    
+                    
+                    }
+                    
+                    
+                }
+                catch {
+                    print("Error with Json: \(error)")
+                }
+                
+            }
+        }
+        
+        task.resume()
+        
+        
+    }
+
     
     //MARK: - Picker View Data Sources and Delegates
     
@@ -123,7 +168,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
         print(numberofUpdate)
         tableTitle = type
         number = Int(numberofUpdate)!
-        
+        downloadData(number: numberofUpdate)
     }
  
     @IBAction func done(_ sender: AnyObject) {
