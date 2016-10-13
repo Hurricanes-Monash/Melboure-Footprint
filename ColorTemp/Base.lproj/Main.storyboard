@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Bp-cd-Ady">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1jq-FD-JZi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Updates-->
         <scene sceneID="GpF-iB-Bfy">
             <objects>
                 <viewController id="Kg8-BY-IL0" customClass="RootViewController" customModule="ColorTemp" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                             <constraint firstItem="Ycq-Jv-WQL" firstAttribute="leading" secondItem="qy6-GN-aXy" secondAttribute="leadingMargin" id="qaO-nJ-MNh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="f2u-aT-UCe">
+                    <navigationItem key="navigationItem" title="Updates" id="f2u-aT-UCe">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="vIw-LK-Zfb">
                             <connections>
                                 <action selector="done:" destination="Kg8-BY-IL0" id="2ga-DI-CYr"/>
@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36H-wm-S6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984.79999999999995" y="-558.17091454272872"/>
+            <point key="canvasLocation" x="2662" y="-598"/>
         </scene>
         <!--Sensor Table View Controller-->
         <scene sceneID="kRw-vs-xt6">
@@ -97,7 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dk-hd-WT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="-411.544227886057"/>
+            <point key="canvasLocation" x="5557.6000000000004" y="-411.544227886057"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="snT-py-3hH">
@@ -137,12 +137,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="-261.31934032983509"/>
+            <point key="canvasLocation" x="7354.3999999999996" y="-61.619190404797607"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="oVk-tK-rh1">
+            <objects>
+                <tabBarController id="1jq-FD-JZi" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="8sF-Yd-X9u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="6Bp-cd-Ady" kind="relationship" relationship="viewControllers" id="zcm-4d-PTH"/>
+                        <segue destination="yak-h2-Zpq" kind="relationship" relationship="viewControllers" id="Mo4-0C-ZVh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1C5-hi-fyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-69" y="-435"/>
+        </scene>
+        <!--Updates-->
         <scene sceneID="40c-Xl-uoH">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xg6-SO-nbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Bp-cd-Ady" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Updates" id="juL-Rz-KSe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HLz-uQ-mHC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -153,9 +173,46 @@
                         <segue destination="Kg8-BY-IL0" kind="relationship" relationship="rootViewController" id="Uhk-AI-PBT"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xg6-SO-nbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2.3999999999999999" y="-382.75862068965517"/>
+            <point key="canvasLocation" x="1335" y="-577"/>
+        </scene>
+        <!--Weather-->
+        <scene sceneID="zou-gV-p7F">
+            <objects>
+                <viewController id="F5f-BL-Q9B" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fX2-ew-cSn"/>
+                        <viewControllerLayoutGuide type="bottom" id="IE0-FI-qWp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0k6-ub-Y6T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weather" id="HJn-Fm-qlb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oQY-nz-WrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="160"/>
+        </scene>
+        <!--Weather-->
+        <scene sceneID="C22-xd-LzT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yak-h2-Zpq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Weather" id="mKa-RK-rda"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lAV-Qb-asI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="F5f-BL-Q9B" kind="relationship" relationship="rootViewController" id="aJg-ZZ-7ST"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Oc-ga-hUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140" y="143"/>
         </scene>
     </scenes>
 </document>

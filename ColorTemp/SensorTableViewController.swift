@@ -14,12 +14,15 @@ class SensorTableViewController: UITableViewController /*,addSensorDelegate */{
         print("yes")
     }
     */
+    
   
     var numberofRow : Int?
-
+    var tableSensors = [newSensor]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(numberofRow)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,16 +47,40 @@ class SensorTableViewController: UITableViewController /*,addSensorDelegate */{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return numberofRow!
+        return tableSensors.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Basic")!
-            cell.textLabel?.text = "The sensed color: "
-            cell.backgroundColor = UIColor(red: 204/255, green: 101/255, blue: 101/255, alpha: 1)
-
+            let sensor = tableSensors[(indexPath as NSIndexPath).row]
+            //let red = sensor.red!
+            //255.0 as CGFloat
+           // let red = sensor.red! * 0.255 as! CGFont
+           // print(red)
+           // let green = sensor.green!  * 0.255 as! CGFont
+           // let blue = sensor.blue!  * 0.255 as! CGFont
+          //  let aaa = 255 as Float
+            let red = sensor.red!  / 1000
+            print(red)
+            let green = sensor.green! / 1000
+            print("green is" )
+            print(green)
+            let blue = sensor.blue! / 1000
+            if self.title == "Color"{
+            cell.textLabel?.text = "The sensed color NO.\(indexPath.row+1) "
+            cell.backgroundColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1)
+            }
+            else if self.title == "Pressure"{
+                let presure = sensor.pressure!
+                cell.textLabel?.text = "The presure NO.\(indexPath.row+1) is \(presure)Pa"
+            }
+            else{
+                let tem = sensor.celsius!
+                cell.textLabel?.text = "The temperature NO.\(indexPath.row+1) is \(tem)℃"
+            }
+            
             return cell
             
     }
@@ -69,7 +96,16 @@ class SensorTableViewController: UITableViewController /*,addSensorDelegate */{
     }
     */
 
+    
     /*
+     let red = sensor.red!  / 255
+     print(red)
+     let green = sensor.green! / 255
+     print("green is" )
+     print(green)
+     let blue = sensor.blue! / 255
+     print(red)
+
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.

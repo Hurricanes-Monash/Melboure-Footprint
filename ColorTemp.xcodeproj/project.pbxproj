@@ -17,6 +17,8 @@
 		4CC84A721DA763F200FB3CF4 /* ColorTempTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC84A711DA763F200FB3CF4 /* ColorTempTests.swift */; };
 		4CC84A7D1DA763F300FB3CF4 /* ColorTempUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC84A7C1DA763F300FB3CF4 /* ColorTempUITests.swift */; };
 		4CE624451DAE385D0007DAEB /* SensorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE624441DAE385D0007DAEB /* SensorTableViewController.swift */; };
+		4CE624471DAEF8990007DAEB /* SensorDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE624461DAEF8990007DAEB /* SensorDataViewController.swift */; };
+		4CE624491DAF0EF90007DAEB /* newSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE624481DAF0EF90007DAEB /* newSensor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		4CC84A7C1DA763F300FB3CF4 /* ColorTempUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTempUITests.swift; sourceTree = "<group>"; };
 		4CC84A7E1DA763F300FB3CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CE624441DAE385D0007DAEB /* SensorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTableViewController.swift; sourceTree = "<group>"; };
+		4CE624461DAEF8990007DAEB /* SensorDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDataViewController.swift; sourceTree = "<group>"; };
+		4CE624481DAF0EF90007DAEB /* newSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newSensor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +110,9 @@
 				4CC84A581DA763F200FB3CF4 /* AppDelegate.swift */,
 				4CC84A5A1DA763F200FB3CF4 /* RootViewController.swift */,
 				4CE624441DAE385D0007DAEB /* SensorTableViewController.swift */,
+				4CE624461DAEF8990007DAEB /* SensorDataViewController.swift */,
 				4CC84A5C1DA763F200FB3CF4 /* DataViewController.swift */,
+				4CE624481DAF0EF90007DAEB /* newSensor.swift */,
 				4CC84A5E1DA763F200FB3CF4 /* ModelController.swift */,
 				4CC84A601DA763F200FB3CF4 /* Main.storyboard */,
 				4CC84A631DA763F200FB3CF4 /* Assets.xcassets */,
@@ -271,7 +277,9 @@
 				4CC84A5B1DA763F200FB3CF4 /* RootViewController.swift in Sources */,
 				4CC84A5F1DA763F200FB3CF4 /* ModelController.swift in Sources */,
 				4CC84A5D1DA763F200FB3CF4 /* DataViewController.swift in Sources */,
+				4CE624491DAF0EF90007DAEB /* newSensor.swift in Sources */,
 				4CE624451DAE385D0007DAEB /* SensorTableViewController.swift in Sources */,
+				4CE624471DAEF8990007DAEB /* SensorDataViewController.swift in Sources */,
 				4CC84A591DA763F200FB3CF4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,11 +19,14 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
    // var delegate: addSensorDelegate?
     var number : Int?
     var tableTitle : String?
-
+    var sensors = [newSensor]()
+    var sensor = newSensor()
+   
     @IBOutlet weak var pickerView: UIPickerView!
     var pageViewController: UIPageViewController?
     let pickerData = [
-        ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+        ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39"
+            ,"40","41","42","43","44","45","46","47","48","49","50"],
         ["Color","Pressure"," Temperature"]
     ]
 
@@ -33,10 +36,11 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
-
+        
         pickerView.selectRow(2, inComponent:sizeComponent, animated: false)
         updateLabel()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+                // Do any additional setup after loading the view, typically from a nib.
         //Run list running jsonTest.js
 /*        let requestURL: NSURL = NSURL(string: "http://118.139.61.59:8081/listUsers")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
@@ -90,7 +94,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
     func downloadData(number:String)
     {
         var url:URL
-        url = URL(string: "http://192.168.0.26:8081/history/"+number)!
+        url = URL(string: "http://118.139.47.90:8081/history/"+number)!
         print(url)
         let session = URLSession.shared
         let task = session.dataTask(with: url){
@@ -101,7 +105,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
             
             if (statusCode == 200) {
                 print("Everyone is fine, file downloaded successfully.")
-                
+                self.sensors.removeAll()
                 do{
                     let jsonData = try JSONSerialization.jsonObject(with: data!,options:.allowFragments) as! NSArray
                          print(jsonData)
@@ -110,21 +114,31 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
                         print(item)
                         
                         
-                        let pressure = (item["pressure"] as? NSNumber)!
-                            print(pressure)
+                       if let pressure = item["pressure"] as? Float
+                       {
+                        self.sensor.pressure = pressure
+                        print(pressure)
+                        print(self.sensor.pressure)
+                        }
+                        let celsius = (item["celsius"] as? Float)!
+                        let red = (item["red"] as? Float)!
+                        let blue = (item["blue"] as? Float)!
+                        let green = (item["green"] as? Float)!
                         
-
-                    
-                    
-                    
+                        self.sensor.celsius = celsius
+                        self.sensor.blue = blue
+                        self.sensor.red = red
+                        self.sensor.green = green
+                        self.sensors.append(self.sensor)
                     }
                     
-                    
-                }
+                                    }
                 catch {
                     print("Error with Json: \(error)")
                 }
+               
                 
+
             }
         }
         
@@ -187,6 +201,10 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
                 SensorTableViewController{
                 dest.title = tableTitle
                 dest.numberofRow = number
+                dest.tableSensors.removeAll()
+                print(dest.tableSensors.count)
+                dest.tableSensors = self.sensors
+                print(dest.tableSensors.count)
             }
 
     
