@@ -21,7 +21,6 @@ class SensorTableViewController: UITableViewController /*,addSensorDelegate */{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(numberofRow)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -74,6 +73,7 @@ class SensorTableViewController: UITableViewController /*,addSensorDelegate */{
             }
             else if self.title == "Pressure"{
                 let presure = sensor.pressure!
+                print(sensor.pressure)
                 cell.textLabel?.text = "The presure NO.\(indexPath.row+1) is \(presure)Pa"
             }
             else{

@@ -15,6 +15,13 @@ class newSensor: NSObject {
     var blue: Float?
     var green: Float?
     
+    init(c:Float,p:Float,r:Float,b:Float,g:Float) {
+        self.celsius = c
+        self.pressure = p
+        self.red = r
+        self.blue = b
+        self.green = g
+    }
    
 
 }

@@ -20,7 +20,6 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
     var number : Int?
     var tableTitle : String?
     var sensors = [newSensor]()
-    var sensor = newSensor()
    
     @IBOutlet weak var pickerView: UIPickerView!
     var pageViewController: UIPageViewController?
@@ -108,30 +107,29 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
                 self.sensors.removeAll()
                 do{
                     let jsonData = try JSONSerialization.jsonObject(with: data!,options:.allowFragments) as! NSArray
-                         print(jsonData)
                     for item in (jsonData as? [[String:Any]])!
                     {
                         print(item)
                         
                         
-                       if let pressure = item["pressure"] as? Float
-                       {
-                        self.sensor.pressure = pressure
-                        print(pressure)
-                        print(self.sensor.pressure)
-                        }
-                        let celsius = (item["celsius"] as? Float)!
+                        let pressure = item["pressure"] as? Float
+//                       {
+//                        self.sensor.pressure = pressure
+//                        print(pressure)
+//                        }
+                        let celsius = item["celsius"] as? Float
+                       
                         let red = (item["red"] as? Float)!
                         let blue = (item["blue"] as? Float)!
                         let green = (item["green"] as? Float)!
                         
-                        self.sensor.celsius = celsius
-                        self.sensor.blue = blue
-                        self.sensor.red = red
-                        self.sensor.green = green
-                        self.sensors.append(self.sensor)
+//                        self.sensor.blue = blue
+//                        self.sensor.red = red
+//                        self.sensor.green = green
+                        self.sensors.append(newSensor(c: celsius!,p: pressure!,r: red,b: blue,g: green))
+                        print(self.sensors.count)
+
                     }
-                    
                                     }
                 catch {
                     print("Error with Json: \(error)")
@@ -179,7 +177,6 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
         let type = pickerData[toppingComponent][pickerView.selectedRow(inComponent: toppingComponent)]
         pizzaLabel.text = "You are looking for: " + numberofUpdate + " updates of " + type
         
-        print(numberofUpdate)
         tableTitle = type
         number = Int(numberofUpdate)!
         downloadData(number: numberofUpdate)
